@@ -51,14 +51,14 @@ void loop()
    void switchoff()
    {   
    //Moving door
-    for(pos = 80; pos < 155; pos = 3)  
+    for(pos = 80; pos < 155; pos += 3)  
     {                                  
     doorServo.write(pos);             
     delay(15);                      
     }
   
     //Moving hand
-    for(pos = 0; pos < 129; pos = 4) 
+    for(pos = 0; pos < 129; pos += 4) 
     {                                  
     handServo.write(pos);              
     delay(15);                      
@@ -83,20 +83,20 @@ void loop()
     void switchoffdelay()
    {
     //Moving door
-    for(pos = 80; pos < 155; pos = 3)  
+    for(pos = 80; pos < 155; pos += 3)  
     {                                  
       doorServo.write(pos);             
       delay(15);                      
     }
     delay(800);
     //Moving hand
-    for(pos = 0; pos < 100; pos = 4) 
+    for(pos = 0; pos < 100; pos += 4) 
     {                                  
       handServo.write(pos);              
       delay(15);                      
     }
     delay(1000);
-    for(pos = 100; pos < 129; pos = 4) 
+    for(pos = 100; pos < 129; pos += 4) 
     {                                  
       handServo.write(pos);              
       delay(15);                      
@@ -123,7 +123,7 @@ void loop()
   {
    
    //Moving door
-    for(pos = 80; pos < 125; pos = 3)  
+    for(pos = 80; pos < 125; pos += 3)  
     {                                  
     doorServo.write(pos);             
     delay(15);                      
@@ -136,7 +136,7 @@ void loop()
     delay(15);                     
     }
    //Moving door
-    for(pos = 80; pos < 110; pos = 3)  
+    for(pos = 80; pos < 110; pos += 3)  
     {                                  
     doorServo.write(pos);             
     delay(15);                      
@@ -150,7 +150,7 @@ void loop()
     }
     delay(700);
    //Moving door
-    for(pos = 80; pos < 125; pos = 3)  
+    for(pos = 80; pos < 125; pos += 3)  
     {                                  
     doorServo.write(pos);             
     delay(15);                      
@@ -166,14 +166,14 @@ void loop()
    
     //----of switch of----//
   //Moving door
-    for(pos = 80; pos < 155; pos = 8)  
+    for(pos = 80; pos < 155; pos += 8)  
     {                                  
     doorServo.write(pos);             
     delay(15);                      
     }
   
     //Moving hand
-    for(pos = 0; pos < 129; pos = 3) 
+    for(pos = 0; pos < 129; pos += 3) 
     {                                  
     handServo.write(pos);              
     delay(15);                      
@@ -198,12 +198,13 @@ void loop()
    void rideswitchoff()
    {   
    //Moving door
-    for(pos = 80; pos < 155; pos = 3)  
+    for(pos = 80; pos < 155; pos += 3)  
     {                                  
       doorServo.write(pos);             
       delay(15);                      
     }
-    delay(2000);
+     //Wait for opening door than track moves
+    delay(1500);
     pirData=digitalRead(pir_pin);
     //motor run forward and backwards
     if(pirData==HIGH)
@@ -216,7 +217,7 @@ void loop()
       delay(300);  
     }
     //Moving hand
-    for(pos = 0; pos < 129; pos = 4) 
+    for(pos = 0; pos < 129; pos += 4) 
     {                                  
       handServo.write(pos);              
       delay(15);                      
