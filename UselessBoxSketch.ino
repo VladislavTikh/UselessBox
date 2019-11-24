@@ -58,7 +58,7 @@ void loop()
     }
   
     //Moving hand
-    for(pos = 0; pos < 129; pos += 4) 
+    for(pos = 0; pos < 135; pos += 4) 
     {                                  
     handServo.write(pos);              
     delay(15);                      
@@ -72,7 +72,7 @@ void loop()
     }
      
     //hiding door
-    for(pos = 155; pos>=80; pos-=3)    
+    for(pos = 155; pos>=90; pos-=3)    
     {                               
     doorServo.write(pos);             
     delay(15);                     
@@ -83,20 +83,20 @@ void loop()
     void switchoffdelay()
    {
     //Moving door
-    for(pos = 80; pos < 155; pos += 3)  
+    for(pos = 80; pos < 145; pos += 3)  
     {                                  
       doorServo.write(pos);             
       delay(15);                      
     }
     delay(800);
     //Moving hand
-    for(pos = 0; pos < 100; pos += 4) 
+    for(pos = 0; pos < 90; pos += 4) 
     {                                  
       handServo.write(pos);              
       delay(15);                      
     }
     delay(1000);
-    for(pos = 100; pos < 129; pos += 4) 
+    for(pos = 100; pos < 125; pos += 4) 
     {                                  
       handServo.write(pos);              
       delay(15);                      
@@ -166,7 +166,7 @@ void loop()
    
     //----of switch of----//
   //Moving door
-    for(pos = 80; pos < 155; pos += 8)  
+    for(pos = 80; pos < 135; pos += 8)  
     {                                  
     doorServo.write(pos);             
     delay(15);                      
@@ -198,7 +198,7 @@ void loop()
    void rideswitchoff()
    {   
    //Moving door
-    for(pos = 80; pos < 155; pos += 3)  
+    for(pos = 80; pos < 135; pos += 3)  
     {                                  
       doorServo.write(pos);             
       delay(15);                      
@@ -210,11 +210,11 @@ void loop()
     if(pirData==HIGH)
     {
       motor.run(FORWARD);
-      delay(100);
+      delay(200);
       motor.run(RELEASE);
-      delay(100);
+      delay(200);
       motor.run(BACKWARDS);
-      delay(300);  
+      delay(500);  
     }
     //Moving hand
     for(pos = 0; pos < 129; pos += 4) 
@@ -229,7 +229,7 @@ void loop()
       delay(15);                       
     }    
     //hiding door
-    for(pos = 155; pos>=80; pos-=3)    
+    for(pos = 155; pos>=90; pos-=3)    
     {                               
       doorServo.write(pos);             
       delay(15);                     
